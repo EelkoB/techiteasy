@@ -1,0 +1,23 @@
+h1 {
+    color: darkorange;
+    grid-area: header;
+    justify-self: center;
+
+}
+
+#soldtvs {
+    grid-area: soldtvs;
+    color: green;
+    font: 25px bold;
+}
+#purchasedtvs {
+    grid-area: purchasedtvs;
+    color: #0000ff;
+    font: 25px bold;
+}
+
+#needtobesold {
+    grid-area: needtobesold;
+    color: #ff0000;
+    font: 25px bold;
+}
