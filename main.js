@@ -161,3 +161,60 @@ const inventory = [
     sold: 8,
   },
 ];
+// maak een variabele waar je de waarde van van elk naam-object in kan opslaan
+// Ga over de gehele array van inventory
+// geef alleen de waarde van naam uit elk object terug
+// log de waardes van het element naam uit elk object
+
+const tvNames = inventory.map((name) => {
+  return name.name;
+})
+console.log(tvNames);
+
+// filter alle uitverkochte tv's
+// zoek in de array alle elementen op met de naam sold en de original stock op
+// een tv is uitverkocht als originalStock- sold = 0
+// log alleen de waar
+
+
+const soldOut = inventory.filter((sold) => {
+  return sold.originalStock === sold.sold;
+})
+
+console.log(soldOut);
+
+//*Opdracht 1c:** Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die over AmbiLight
+//   beschikken. Log de uitkomst in de console.
+// Loop door de array
+// elk object willen we weten of een tv ambilight heeft
+// log het resultaat in de console
+
+const ambilights = inventory.filter((ambilight) => {
+  return ambilight.options.ambiLight = true;
+})
+
+console.log(ambilights);
+// Opdracht 1d:** Schrijf een functie die alle tv's van laagste naar hoogste prijs sorteert. Log de uitkomst in de
+// console.
+// loop door de array
+// voor iedere iteratie willen we kijken of de eerdere iteratie een hogere  prijs heeft en die zetten we dan voor aan
+
+function sortArray(hightolow) {
+  return hightolow.sort((a, b) => {
+    if (a.price - b.price > 0) {
+      return 1;
+    }
+    else if (a.price - b.price < 0) {
+      return -1;
+    }
+    else {
+      return 0;
+    }
+  })
+}
+//function sortArrayshort(tvs) {
+//  return tvs.sort((a,b) => a.price - b.price)
+//}
+//console.log(sortArrayshort(inventory));
+
+console.log(sortArray(inventory));
